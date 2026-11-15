@@ -117,14 +117,14 @@ AI cost estimates from machine drawings, inside a self-hosted workspace for star
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/agentic-world-simulator">🌍 Agentic World Simulator</a></h3>
 Test a startup's strategy in a simulated world: agent-based consumers, companies and traders on a 3D globe, calibrated to live data, with Monte Carlo forecasts and daily AI insights.<br><br>
-<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL%20%2B%20pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL + pgvector"> <img src="https://img.shields.io/badge/Server--Sent%20Events-1a1b27?style=flat-square" alt="SSE"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL%20%2B%20pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL + pgvector"> <img src="https://img.shields.io/badge/Server--Sent%20Events-1a1b27?style=flat-square" alt="Server-Sent Events"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
 </td>
 </tr>
 <tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/school-and-tutorials-management-MVP">🎓 ClassNest</a></h3>
 School and tuition-centre management: live classes with recording, RAG-generated notes and tests, and an AI tutor that answers from paused video frames.<br><br>
-<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/vLLM-1a1b27?style=flat-square" alt="vLLM"> <img src="https://img.shields.io/badge/Gemma%203-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma 3"> <img src="https://img.shields.io/badge/Tesseract%20OCR-3c3c3c?style=flat-square" alt="Tesseract">
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/vLLM-30A2FF?style=flat-square" alt="vLLM"> <img src="https://img.shields.io/badge/Gemma%203-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma 3"> <img src="https://img.shields.io/badge/Tesseract-3c3c3c?style=flat-square" alt="Tesseract">
 </td>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/vulnerability-detector">🛡️ Vulnerability Detector</a></h3>
@@ -141,7 +141,7 @@ A local visiting-card scanner: OpenCV straightens the photo, Apple Vision reads 
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/miniytapp">🎬 YT Mini</a></h3>
 AI video intelligence: summaries from key frames plus Whisper captions, streamed live over Socket.IO, rate-limited and CSRF-protected, and stress-tested with Locust.<br><br>
-<img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" alt="Flask"> <img src="https://img.shields.io/badge/Whisper-412991?style=flat-square&logo=openai&logoColor=white" alt="Whisper"> <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white" alt="Ollama"> <img src="https://img.shields.io/badge/Locust-load%20tested-2E7D32?style=flat-square" alt="Locust">
+<img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" alt="Flask"> <img src="https://img.shields.io/badge/Whisper-412991?style=flat-square&logo=openai&logoColor=white" alt="Whisper"> <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white" alt="Ollama"> <img src="https://img.shields.io/badge/Locust-2E7D32?style=flat-square" alt="Locust">
 </td>
 </tr>
 <tr>
@@ -170,7 +170,7 @@ An AI companion for intrusive thoughts, OCD and anxiety: thought dissection, an 
 <td width="33%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/mindfulness">🌼 Mindy</a></h3>
 A companion for people living with dementia: a friendly animated face, reminders, stories and games, face or fingerprint login, and caregiver alerts.<br><br>
-<img src="https://img.shields.io/badge/Gemma%203-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma 3"> <img src="https://img.shields.io/badge/vLLM-1a1b27?style=flat-square" alt="vLLM"> <img src="https://img.shields.io/badge/Socket.IO-010101?style=flat-square&logo=socketdotio&logoColor=white" alt="Socket.IO">
+<img src="https://img.shields.io/badge/Gemma%203-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma 3"> <img src="https://img.shields.io/badge/vLLM-30A2FF?style=flat-square" alt="vLLM"> <img src="https://img.shields.io/badge/Socket.IO-010101?style=flat-square&logo=socketdotio&logoColor=white" alt="Socket.IO">
 </td>
 <td width="33%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/ocr-alphabet-detection">🤟 Fingerspelling OCR</a></h3>
