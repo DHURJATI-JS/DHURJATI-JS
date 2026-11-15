@@ -245,8 +245,23 @@ Webcam fingerspelling (ISL/ASL) and printed-letter OCR to text, with user-taught
 
 ---
 
+## ⚠️ Disclaimer: no warranty, no liability
+
+> [!CAUTION]
+> **Every project on this profile is provided "AS IS", with NO WARRANTY and NO LIABILITY. Use it at your own risk.**
+>
+> - **Student-grade.** These are learning and personal projects, not certified, audited or production-ready products.
+> - **No warranty** of any kind, express or implied, including merchantability, fitness for a particular purpose and
+>   non-infringement.
+> - **No liability, no responsibility.** I (Dhurjati Sharma, DHURJATI-JS) and any contributors are not liable for any
+>   damages, data loss, security incident, financial loss, injury or other harm arising from using, copying, modifying,
+>   deploying or relying on any of these projects, or on anything their AI features generate.
+> - **Not professional advice.** Nothing here is medical, legal, financial or security advice. AI output can be wrong.
+> - **Licences.** Most of my projects are released under the [MIT License](https://opensource.org/license/mit), which
+>   carries the same no-warranty, no-liability terms. Each repository's own `LICENSE` and disclaimer apply; a few
+>   (such as AuraMind) are proprietary, all rights reserved.
+
 <p align="center">
-  <b>Most of my projects are student-grade and provided as-is; check each repo's licence and disclaimer.</b><br>
   <a href="https://my-website-three-mu-29.vercel.app/">🌐 Portfolio</a> ·
   <a href="mailto:dhurjatisharma2010@gmail.com">📫 Email</a> ·
   <a href="https://github.com/DHURJATI-JS?tab=repositories">📦 Repositories</a>
