@@ -219,8 +219,14 @@ Webcam fingerspelling (ISL/ASL) and printed-letter OCR to text, with user-taught
   <img src="https://streak-stats.demolab.com?user=DHURJATI-JS&theme=tokyonight&hide_border=true&border_radius=12" alt="GitHub streak">
 </p>
 
+### 🧊 My commits in 3D
+
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=DHURJATI-JS&theme=tokyo-night&hide_border=true&area=true&radius=12" alt="Contribution activity graph" width="100%">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/DHURJATI-JS/DHURJATI-JS/output/profile-3d-contrib/profile-night-rainbow.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/DHURJATI-JS/DHURJATI-JS/output/profile-3d-contrib/profile-green-animate.svg">
+    <img alt="3D contribution calendar" src="https://raw.githubusercontent.com/DHURJATI-JS/DHURJATI-JS/output/profile-3d-contrib/profile-green-animate.svg" width="100%">
+  </picture>
 </p>
 
 ### 🐍 Watch the snake eat my commits
