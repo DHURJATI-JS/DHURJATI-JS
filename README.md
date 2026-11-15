@@ -13,7 +13,6 @@
   <a href="https://my-website-three-mu-29.vercel.app/"><img src="https://img.shields.io/badge/Portfolio-Live-7aa2f7?style=for-the-badge&logo=vercel&logoColor=white" alt="Portfolio"></a>
   <a href="mailto:dhurjatisharma2010@gmail.com"><img src="https://img.shields.io/badge/Email-Say%20hi-bb9af7?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"></a>
   <a href="https://github.com/DHURJATI-JS?tab=followers"><img src="https://img.shields.io/github/followers/DHURJATI-JS?style=for-the-badge&logo=github&label=Followers&color=1a1b27" alt="Followers"></a>
-  <img src="https://komarev.com/ghpvc/?username=DHURJATI-JS&style=for-the-badge&color=7aa2f7&label=PROFILE+VIEWS" alt="Profile views">
 </p>
 
 ---
@@ -105,6 +104,7 @@ data never leaves the building. Use the local AI (Gemma 3 on vLLM) or plug in Cl
 
 ## 🤖 AI projects
 
+<!-- PROJECTS:START -->
 ### 🚀 Industry & startup
 
 <table>
@@ -179,6 +179,7 @@ Webcam fingerspelling (ISL/ASL) and printed-letter OCR to text, with user-taught
 </td>
 </tr>
 </table>
+<!-- PROJECTS:END -->
 
 <p align="center"><a href="https://github.com/DHURJATI-JS?tab=repositories"><b>See all repositories →</b></a></p>
 
@@ -205,6 +206,9 @@ Webcam fingerspelling (ISL/ASL) and printed-letter OCR to text, with user-taught
 <img src="https://skillicons.dev/icons?i=linux,arch,apple,windows,docker,git,github,githubactions,vercel,cloudflare,vscode" alt="Linux, Arch, macOS, Windows, Docker, Git, GitHub, GitHub Actions, Vercel, Cloudflare, VS Code">
 
 <img src="https://img.shields.io/badge/Locust-load%20testing-2E7D32?style=for-the-badge" alt="Locust"> <img src="https://img.shields.io/badge/ChatGPT-assistant-74aa9c?style=for-the-badge&logo=openai&logoColor=white" alt="ChatGPT"> <img src="https://img.shields.io/badge/Claude-assistant-D97757?style=for-the-badge&logo=claude&logoColor=white" alt="Claude">
+
+<!-- STACK:START -->
+<!-- STACK:END -->
 
 ---
 

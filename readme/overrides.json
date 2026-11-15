@@ -1,0 +1,148 @@
+{
+  "_help": "How projects appear in README.md. scripts/build_readme.py reads your portfolio site's /api/projects and rebuilds the AI projects section and the tech-stack extras. Projects listed here keep this name, emoji, text and badges; any other public project gets a card made from the site's AI summary. 'skip' = never get a card (featured by hand, or merged into another card). To hide a project everywhere, mark it Hidden in your site's /admin.",
+  "skip": [
+    "employee-management-system",
+    "IronPulse-AI-assisted-gym-management",
+    "Ai-server",
+    "DHURJATI-JS",
+    "ecommerce"
+  ],
+  "projects": {
+    "ai-cost-estimator-from-drawings": {
+      "emoji": "📐",
+      "name": "StartupOS",
+      "blurb": "AI cost estimates from machine drawings, inside a self-hosted workspace for startups: bookings with WhatsApp reminders, inventory alerts and a client portal.",
+      "tech": [
+        "fastapi",
+        "pgvector",
+        "docker",
+        "gemma",
+        "claude"
+      ]
+    },
+    "agentic-world-simulator": {
+      "emoji": "🌍",
+      "name": "Agentic World Simulator",
+      "blurb": "Test a startup's strategy in a simulated world: agent-based consumers, companies and traders on a 3D globe, calibrated to live data, with Monte Carlo forecasts and daily AI insights.",
+      "tech": [
+        "fastapi",
+        "postgresql+pgvector",
+        "sse",
+        "docker"
+      ]
+    },
+    "school-and-tutorials-management-MVP": {
+      "emoji": "🎓",
+      "name": "ClassNest",
+      "blurb": "School and tuition-centre management: live classes with recording, RAG-generated notes and tests, and an AI tutor that answers from paused video frames.",
+      "tech": [
+        "fastapi",
+        "vllm",
+        "gemma3",
+        "tesseract"
+      ]
+    },
+    "vulnerability-detector": {
+      "emoji": "🛡️",
+      "name": "Vulnerability Detector",
+      "blurb": "Find vulnerable Python dependencies before they find you: real OSV.dev advisories, a local Gemma review with a Claude fallback, and every upgrade re-verified.",
+      "tech": [
+        "fastapi",
+        "postgresql",
+        "ollama",
+        "docker"
+      ]
+    },
+    "cardvault": {
+      "emoji": "📇",
+      "name": "CardVault",
+      "blurb": "A local visiting-card scanner: OpenCV straightens the photo, Apple Vision reads it, Gemma pulls out the contact, and pgvector powers typo-tolerant search.",
+      "tech": [
+        "opencv",
+        "applevision",
+        "gemma",
+        "pgvector"
+      ]
+    },
+    "miniytapp": {
+      "emoji": "🎬",
+      "name": "YT Mini",
+      "blurb": "AI video intelligence: summaries from key frames plus Whisper captions, streamed live over Socket.IO, rate-limited and CSRF-protected, and stress-tested with Locust.",
+      "tech": [
+        "flask",
+        "whisper",
+        "ollama",
+        "locust"
+      ]
+    },
+    "ai-server-v2": {
+      "emoji": "🖥️",
+      "name": "AI Server v2",
+      "blurb": "One OpenAI-compatible link for two GPU PCs with automatic failover. It asks for the other PC's IP at boot, starts everything at logon and is reachable through a Cloudflare tunnel. (<a href=\"https://github.com/DHURJATI-JS/Ai-server\">v1</a>)",
+      "tech": [
+        "llamacpp",
+        "gemma3",
+        "powershell",
+        "cloudflare"
+      ]
+    },
+    "my-website": {
+      "emoji": "✨",
+      "name": "AI-curated portfolio",
+      "blurb": "My portfolio site: an AI reads every README, sorts each project into social impact or industry, writes the summary, and keeps it all up to date automatically.",
+      "tech": [
+        "fastapi",
+        "jinja2",
+        "vercel",
+        "githubapi"
+      ]
+    },
+    "AuraMind": {
+      "emoji": "🧩",
+      "name": "AuraMind",
+      "blurb": "An AI companion for intrusive thoughts, OCD and anxiety: thought dissection, an ERP urge-delay coach and an encrypted thought journal.",
+      "tech": [
+        "fastapi",
+        "gemma",
+        "redis"
+      ]
+    },
+    "mindfulness": {
+      "emoji": "🌼",
+      "name": "Mindy",
+      "blurb": "A companion for people living with dementia: a friendly animated face, reminders, stories and games, face or fingerprint login, and caregiver alerts.",
+      "tech": [
+        "gemma3",
+        "vllm",
+        "socketio"
+      ]
+    },
+    "ocr-alphabet-detection": {
+      "emoji": "🤟",
+      "name": "Fingerspelling OCR",
+      "blurb": "Webcam fingerspelling (ISL/ASL) and printed-letter OCR to text, with user-taught signs. <i>Still in development.</i>",
+      "tech": [
+        "mediapipe",
+        "tesseract",
+        "socketio"
+      ]
+    }
+  },
+  "order": {
+    "industry": [
+      "ai-cost-estimator-from-drawings",
+      "agentic-world-simulator",
+      "school-and-tutorials-management-MVP",
+      "vulnerability-detector",
+      "cardvault",
+      "miniytapp",
+      "ai-server-v2",
+      "my-website"
+    ],
+    "social": [
+      "AuraMind",
+      "mindfulness",
+      "ocr-alphabet-detection"
+    ]
+  }
+}
