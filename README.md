@@ -178,6 +178,11 @@ My portfolio site: an AI reads every README, sorts each project into social impa
 <table>
 <tr>
 <td width="33%" valign="top">
+<h3><a href="https://github.com/DHURJATI-JS/kisansetu-farmers-webapp">💡 KisanSetu</a></h3>
+KisanSetu is a web application designed to connect farm workers, owners, and buyers in India.<br><br>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"> <img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat-square&logo=sqlalchemy&logoColor=white" alt="SQLAlchemy">
+</td>
+<td width="33%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/critical-thinking-enhancer">💡 Critical Thinking Enhancer</a></h3>
 Critical Thinking Enhancer: a local-first cognitive trainer for student developers, with a talking Socratic AI coach, Qwen-coder challenges and hidden-bug hunts in your own code.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
@@ -187,13 +192,13 @@ Critical Thinking Enhancer: a local-first cognitive trainer for student develope
 An AI companion for intrusive thoughts, OCD and anxiety: thought dissection, an ERP urge-delay coach and an encrypted thought journal.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/Gemma-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
 </td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/mindfulness">🌼 Mindy</a></h3>
 A companion for people living with dementia: a friendly animated face, reminders, stories and games, face or fingerprint login, and caregiver alerts.<br><br>
 <img src="https://img.shields.io/badge/Gemma%203-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma 3"> <img src="https://img.shields.io/badge/vLLM-30A2FF?style=flat-square" alt="vLLM"> <img src="https://img.shields.io/badge/Socket.IO-010101?style=flat-square&logo=socketdotio&logoColor=white" alt="Socket.IO">
 </td>
-</tr>
-<tr>
 <td width="33%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/ocr-alphabet-detection">🤟 Fingerspelling OCR</a></h3>
 Webcam fingerspelling (ISL/ASL) and printed-letter OCR to text, with user-taught signs. <i>Still in development.</i><br><br>
