@@ -1,6 +1,7 @@
-# Keeps the project cards and tech stack in README.md in sync with my portfolio site
-# (https://my-website-three-mu-29.vercel.app), which AI-analyses every public repo.
+# Keeps the research-grade cards, project cards and tech stack in README.md in sync with my portfolio
+# site (https://my-website-three-mu-29.vercel.app), which AI-analyses every public repo.
 # A new public project gets a card within ~12 hours. Edit readme/overrides.json to change how one looks.
+# Research-grade cards only appear while the site's research section is switched ON in /admin.
 name: Update README projects
 
 on:

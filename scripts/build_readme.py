@@ -1,18 +1,25 @@
 """Rebuild the auto-updating parts of README.md from my portfolio site.
 
 Reads https://my-website-three-mu-29.vercel.app/api/projects (the site already AI-analyses
-every public repo) and rewrites two marked regions of README.md:
+every public repo) and /api/research, and rewrites three marked regions of README.md:
 
-  <!-- PROJECTS:START --> ... <!-- PROJECTS:END -->   project cards, grouped like the site
+  <!-- RESEARCH:START --> ... <!-- RESEARCH:END -->   research-grade projects: one big card each,
+                                                      validators first. Empty (nothing shown at
+                                                      all) while the site's research section is
+                                                      OFF or has no cards.
+  <!-- PROJECTS:START --> ... <!-- PROJECTS:END -->   project cards, grouped like the site, with
+                                                      the "Other" group always last
   <!-- STACK:START -->    ... <!-- STACK:END -->      tools used in projects that the
                                                       hand-written tech stack doesn't list yet
 
 Projects listed in readme/overrides.json keep their hand-written name, emoji, text and badges.
 New public projects get a card from the site's AI summary, at the top of their group.
-Hidden projects (site /admin) never appear. Uses only the Python standard library.
+Hidden and private projects never appear (the site only publishes public, visible repos).
+Uses only the Python standard library.
 
     python scripts/build_readme.py                  # update README.md in place
     python scripts/build_readme.py --source x.json  # use a saved /api/projects response
+    python scripts/build_readme.py --research-source r.json   # use a saved /api/research response
 """
 from __future__ import annotations
 
@@ -27,7 +34,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
 OVERRIDES = ROOT / "readme" / "overrides.json"
-API = "https://my-website-three-mu-29.vercel.app/api/projects"
+SITE = "https://my-website-three-mu-29.vercel.app"
+API = f"{SITE}/api/projects"
+RESEARCH_API = f"{SITE}/api/research"
 OWNER = "DHURJATI-JS"
 
 # canonical key -> (label, colour, simple-icons logo or "")
@@ -102,6 +111,17 @@ AI_TOOLS = {"gemma", "gemma3", "llamacpp", "vllm", "ollama", "claude", "openai",
 AI_WORDS = re.compile(r"\b(AI|LLMs?|machine learning|neural|GPT|Gemma|RAG)\b")
 
 GROUPS = [("industry", "🚀 Industry & startup", 2, "✨"), ("social", "💚 Social impact", 3, "💡")]
+# Projects moved to "Other" in the site's /admin (the AI never puts anything there). Always the LAST group.
+OTHER_GROUP = ("other", "🧩 Other", 3, "🔹")
+
+# Same validator types as the site's /admin research form.
+VALIDATOR_KINDS = {
+    "professor": "Professor / academic", "researcher": "Researcher", "industry": "Industry expert",
+    "organisation": "Organisation / company", "institution": "University / institute",
+    "government": "Government body", "peer_review": "Peer review", "user_study": "User study / field trial",
+    "mentor": "Mentor / supervisor", "other": "Other",
+}
+MONTHS = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
 
 
 def canon(name: str) -> str:
@@ -169,45 +189,123 @@ def render_card(project: dict, override: dict | None, width: int) -> str:
             f'{blurb}<br><br>\n{badges}\n</td>')
 
 
+def render_group(members: list[dict], group: tuple, overrides: dict, known: list[str]) -> tuple[str, int]:
+    key, heading, cols, default_emoji = group
+    if not members:
+        return "", 0
+    new = sorted((p for p in members if p["name"].lower() not in known),
+                 key=lambda p: p.get("created_at") or "", reverse=True)
+    listed = sorted((p for p in members if p["name"].lower() in known),
+                    key=lambda p: known.index(p["name"].lower()))
+    width = 100 // cols
+    cells = []
+    for p in new + listed:
+        p["_emoji"] = default_emoji
+        cells.append(render_card(p, overrides.get(p["name"].lower()), width))
+    rows = ["<tr>\n" + "\n".join(cells[i:i + cols]) + "\n</tr>" for i in range(0, len(cells), cols)]
+    return f"### {heading}\n\n<table>\n" + "\n".join(rows) + "\n</table>", len(cells)
+
+
 def render_projects(projects: list[dict], cfg: dict) -> tuple[str, int]:
     skip = {s.lower() for s in cfg.get("skip", [])}
     overrides = {k.lower(): v for k, v in cfg.get("projects", {}).items()}
     order = {g: [n.lower() for n in names] for g, names in cfg.get("order", {}).items()}
 
-    ai, other = [], []
+    ai, more, misc = [], [], []
     for p in projects:
         if p["name"].lower() in skip or p.get("archived"):
             continue
-        (ai if (p["name"].lower() in overrides or is_ai(p)) else other).append(p)
+        if (p.get("category") or "industry") == OTHER_GROUP[0]:
+            misc.append(p)  # chosen by hand in the site's /admin: always the last group
+        elif p["name"].lower() in overrides or is_ai(p):
+            ai.append(p)
+        else:
+            more.append(p)
 
     parts, count = [], 0
-    for key, heading, cols, default_emoji in GROUPS:
-        members = [p for p in ai if (p.get("category") or "industry") == key]
-        if not members:
-            continue
-        known = order.get(key, [])
-        new = sorted((p for p in members if p["name"].lower() not in known),
-                     key=lambda p: p.get("created_at") or "", reverse=True)
-        listed = sorted((p for p in members if p["name"].lower() in known),
-                        key=lambda p: known.index(p["name"].lower()))
-        width = 100 // cols
-        cells = []
-        for p in new + listed:
-            p["_emoji"] = default_emoji
-            cells.append(render_card(p, overrides.get(p["name"].lower()), width))
-        rows = ["<tr>\n" + "\n".join(cells[i:i + cols]) + "\n</tr>" for i in range(0, len(cells), cols)]
-        parts.append(f"### {heading}\n\n<table>\n" + "\n".join(rows) + "\n</table>")
-        count += len(cells)
+    for group in GROUPS:
+        members = [p for p in ai if (p.get("category") or "industry") == group[0]]
+        block, n = render_group(members, group, overrides, order.get(group[0], []))
+        if block:
+            parts.append(block)
+            count += n
 
-    if other:
+    if more:
         lines = []
-        for p in sorted(other, key=lambda p: p.get("created_at") or "", reverse=True):
+        for p in sorted(more, key=lambda p: p.get("created_at") or "", reverse=True):
             url = p.get("html_url") or f"https://github.com/{OWNER}/{p['name']}"
             text = first_sentences(p.get("summary") or p.get("description") or "", 140)
             lines.append(f"- [**{short_title(p)}**]({url}) · {text}".rstrip(" ·"))
         parts.append("### 🧰 More projects\n\n" + "\n".join(lines))
-        count += len(other)
+        count += len(more)
+
+    block, n = render_group(misc, OTHER_GROUP, overrides, order.get(OTHER_GROUP[0], []))
+    if block:
+        parts.append(block)  # "Other" is always the last group
+        count += n
     return "\n\n".join(parts), count
+
+
+def nice_date(value: str) -> str:
+    m = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", value or "")
+    if not m or not 1 <= int(m.group(2)) <= 12:
+        return html.escape(value or "")
+    return f"{int(m.group(3))} {MONTHS[int(m.group(2)) - 1]} {m.group(1)}"
+
+
+def safe_link(url: str) -> str:
+    url = (url or "").strip()
+    return html.escape(url, quote=True) if re.match(r"^https?://", url, re.I) else ""
+
+
+def render_research(items: list[dict], public_names: set[str], cfg: dict) -> str:
+    """One big full-width card per research-grade project, validators first. "" = show nothing."""
+    overrides = {k.lower(): v for k, v in cfg.get("projects", {}).items()}
+    cards = []
+    for item in items:
+        name = str(item.get("name") or "")
+        if not name or name.lower() not in public_names:
+            continue  # only repos the site publishes (public + visible): never private ones
+        validators = [v for v in item.get("validators") or [] if isinstance(v, dict) and v.get("name")]
+        if not validators:
+            continue
+        override = overrides.get(name.lower()) or {}
+        title = html.escape(override.get("name") or short_title(item))
+        url = safe_link(item.get("html_url")) or f"https://github.com/{OWNER}/{html.escape(name)}"
+        lines = [f'<td width="100%" valign="top">',
+                 f'<h3><a href="{url}">🔬 {title}</a> '
+                 f'<img src="https://img.shields.io/badge/Research--grade-validated-0f766e?style=flat-square" '
+                 f'alt="Research-grade, validated"></h3>']
+        if item.get("topic"):
+            lines.append(f'<b>Research topic:</b> {html.escape(item["topic"])}<br><br>')
+        lines.append(f"✅ <b>Validated by ({len(validators)})</b>")
+        lines.append("<ul>")
+        for v in validators:
+            bits = [f"<b>{html.escape(v['name'])}</b>", html.escape(VALIDATOR_KINDS.get(v.get("kind"), "Other"))]
+            if v.get("organisation"):
+                bits.append(html.escape(v["organisation"]))
+            link = safe_link(v.get("link"))
+            if link:
+                bits.append(f'<a href="{link}">proof</a>')
+            lines.append("<li>" + " · ".join(bits) + "</li>")
+        lines.append("</ul>")
+        if item.get("usage"):
+            usage = "<br>".join(html.escape(line) for line in str(item["usage"]).splitlines() if line.strip())
+            lines.append(f"🧪 <b>How it was used:</b> {usage}<br>")
+        facts = []
+        if item.get("where"):
+            facts.append(f"📍 <b>Where:</b> {html.escape(item['where'])}")
+        if item.get("when"):
+            facts.append(f"🗓️ <b>When:</b> {nice_date(item['when'])}")
+        if facts:
+            lines.append(" &nbsp;·&nbsp; ".join(facts) + "<br>")
+        lines.append("</td>")
+        cards.append("<table>\n<tr>\n" + "\n".join(lines) + "\n</tr>\n</table>")
+    if not cards:
+        return ""
+    return ("## 🔬 Research-grade projects\n\n"
+            "<sub>Independently validated and used in real settings. Shown first.</sub>\n\n"
+            + "\n\n".join(cards) + "\n\n---")
 
 
 def render_stack_extras(projects: list[dict]) -> str:
@@ -231,6 +329,20 @@ def replace_region(text: str, name: str, body: str) -> str:
     return pattern.sub(lambda m: m.group(1) + inner + m.group(3), text, count=1)
 
 
+def load_research(source: str | None) -> list[dict]:
+    """The site's research-grade projects ([] while its research section is OFF)."""
+    if source:
+        data = json.loads(Path(source).read_text(encoding="utf-8"))
+    else:
+        req = urllib.request.Request(RESEARCH_API, headers={"User-Agent": "profile-readme-builder", "Accept": "application/json"})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            data = json.load(resp)
+    items = data.get("projects") if isinstance(data, dict) else None
+    if not isinstance(items, list):
+        raise ValueError("unexpected /api/research response")
+    return [i for i in items if isinstance(i, dict)] if data.get("enabled") else []
+
+
 def load_projects(source: str | None) -> list[dict]:
     if source:
         data = json.loads(Path(source).read_text(encoding="utf-8"))
@@ -247,6 +359,7 @@ def load_projects(source: str | None) -> list[dict]:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--source", help="read projects from this JSON file instead of the live site")
+    parser.add_argument("--research-source", help="read research projects from this JSON file instead of the live site")
     args = parser.parse_args()
 
     try:
@@ -266,6 +379,13 @@ def main() -> int:
 
     new_text = replace_region(text, "PROJECTS", body)
     new_text = replace_region(new_text, "STACK", render_stack_extras(projects))
+    try:
+        research = load_research(args.research_source)
+    except Exception as exc:  # noqa: BLE001 - site down or older deploy: keep that part as it is
+        print(f"Could not load research projects ({exc}); research section left unchanged.")
+    else:
+        public_names = {p["name"].lower() for p in projects}
+        new_text = replace_region(new_text, "RESEARCH", render_research(research, public_names, cfg))
     if new_text == text:
         print("README already up to date.")
     else:

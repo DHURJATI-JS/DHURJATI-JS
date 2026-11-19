@@ -36,6 +36,9 @@ class Dhurjati:
 
 ---
 
+<!-- RESEARCH:START -->
+<!-- RESEARCH:END -->
+
 ## 🏢 Featured: Deminic, AI Employee Management System
 
 <table>
