@@ -1,4 +1,7 @@
 <!-- Header -->
+<h1><strong align="left">After watching this where are you going? Bingo?</strong></h1>
+
+
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:00d4ff&height=230&section=header&text=Dhurjati%20Sharma&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Local-first%20AI%20%C2%B7%20Backend%20engineering%20%C2%B7%20Systems%20thinking&descAlignY=58&descSize=18" alt="Dhurjati Sharma" width="100%">
 </p>
