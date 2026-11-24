@@ -181,6 +181,11 @@ My portfolio site: an AI reads every README, sorts each project into social impa
 <table>
 <tr>
 <td width="33%" valign="top">
+<h3><a href="https://github.com/DHURJATI-JS/satark-local-llm-scam-detector">💡 Satark</a></h3>
+Satark is a local-first AI tool designed to detect scams in India. It analyzes messages, links, screenshots, and second-hand prices using Gemma 3, running entirely on the user&#x27;s hardware.<br><br>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="pgvector"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
+</td>
+<td width="33%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/kisansetu-farmers-webapp">💡 KisanSetu</a></h3>
 KisanSetu is a web application designed to connect farm workers, owners, and buyers in India.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"> <img src="https://img.shields.io/badge/SQLAlchemy-D71F00?style=flat-square&logo=sqlalchemy&logoColor=white" alt="SQLAlchemy">
@@ -190,13 +195,13 @@ KisanSetu is a web application designed to connect farm workers, owners, and buy
 Critical Thinking Enhancer: a local-first cognitive trainer for student developers, with a talking Socratic AI coach, Qwen-coder challenges and hidden-bug hunts in your own code.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
 </td>
+</tr>
+<tr>
 <td width="33%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/AuraMind">🧩 AuraMind</a></h3>
 An AI companion for intrusive thoughts, OCD and anxiety: thought dissection, an ERP urge-delay coach and an encrypted thought journal.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/Gemma-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
 </td>
-</tr>
-<tr>
 <td width="33%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/mindfulness">🌼 Mindy</a></h3>
 A companion for people living with dementia: a friendly animated face, reminders, stories and games, face or fingerprint login, and caregiver alerts.<br><br>
