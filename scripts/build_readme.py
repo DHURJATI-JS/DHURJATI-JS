@@ -7,8 +7,13 @@ every public repo) and /api/research, and rewrites three marked regions of READM
                                                       validators first. Empty (nothing shown at
                                                       all) while the site's research section is
                                                       OFF or has no cards.
-  <!-- PROJECTS:START --> ... <!-- PROJECTS:END -->   project cards, grouped like the site, with
-                                                      the "Other" group always last
+  <!-- SPOTLIGHT:START --> ... <!-- SPOTLIGHT:END --> two big cards: the most recently updated
+                                                      project and the most popular one (stars,
+                                                      then forks). Rebuilt on every run, so it
+                                                      follows your latest work every day.
+  <!-- PROJECTS:START --> ... <!-- PROJECTS:END -->   project cards, grouped like the site (your own
+                                                      categories from the site's /admin, e.g. Games,
+                                                      get their own group), "Other" always last
   <!-- STACK:START -->    ... <!-- STACK:END -->      tools used in projects that the
                                                       hand-written tech stack doesn't list yet
 
@@ -113,6 +118,9 @@ AI_WORDS = re.compile(r"\b(AI|LLMs?|machine learning|neural|GPT|Gemma|RAG)\b")
 GROUPS = [("industry", "🚀 Industry & startup", 2, "✨"), ("social", "💚 Social impact", 3, "💡")]
 # Projects moved to "Other" in the site's /admin (the AI never puts anything there). Always the LAST group.
 OTHER_GROUP = ("other", "🧩 Other", 3, "🔹")
+BUILTIN_KEYS = {"industry", "social", OTHER_GROUP[0]}
+# Your own categories from the site's /admin (e.g. Games): shown after the built-in groups, before Other.
+CUSTOM_EMOJI = {"games": "🎮", "robotics": "🤖", "research": "🔬", "tools": "🛠️", "learning": "📚"}
 
 # Same validator types as the site's /admin research form.
 VALIDATOR_KINDS = {
@@ -212,11 +220,15 @@ def render_projects(projects: list[dict], cfg: dict) -> tuple[str, int]:
     order = {g: [n.lower() for n in names] for g, names in cfg.get("order", {}).items()}
 
     ai, more, misc = [], [], []
+    custom: dict[str, list[dict]] = {}
     for p in projects:
         if p["name"].lower() in skip or p.get("archived"):
             continue
-        if (p.get("category") or "industry") == OTHER_GROUP[0]:
+        category = p.get("category") or "industry"
+        if category == OTHER_GROUP[0]:
             misc.append(p)  # chosen by hand in the site's /admin: always the last group
+        elif category not in BUILTIN_KEYS:
+            custom.setdefault(category, []).append(p)  # your own category, also chosen by hand
         elif p["name"].lower() in overrides or is_ai(p):
             ai.append(p)
         else:
@@ -226,6 +238,14 @@ def render_projects(projects: list[dict], cfg: dict) -> tuple[str, int]:
     for group in GROUPS:
         members = [p for p in ai if (p.get("category") or "industry") == group[0]]
         block, n = render_group(members, group, overrides, order.get(group[0], []))
+        if block:
+            parts.append(block)
+            count += n
+
+    for key, members in custom.items():
+        label = str(members[0].get("category_name") or key.replace("-", " ").title())
+        group = (key, f"{CUSTOM_EMOJI.get(key, '📁')} {label}", 3, "🔹")
+        block, n = render_group(members, group, overrides, order.get(key, []))
         if block:
             parts.append(block)
             count += n
@@ -343,6 +363,50 @@ def load_research(source: str | None) -> list[dict]:
     return [i for i in items if isinstance(i, dict)] if data.get("enabled") else []
 
 
+# ----------------------------------------------------------------- spotlight --
+def _spot_card(project: dict, override: dict | None, label: str, meta: str) -> str:
+    url = safe_link(project.get("html_url")) or f"https://github.com/{OWNER}/{html.escape(project['name'])}"
+    if override:
+        emoji = override.get("emoji", "")
+        name = html.escape(override.get("name") or short_title(project))
+        blurb = override.get("blurb", "")  # trusted, may contain simple HTML
+    else:
+        emoji = ""
+        name = html.escape(short_title(project))
+        blurb = html.escape(first_sentences(project.get("summary") or project.get("description") or "", 200))
+    banner = safe_link(project.get("banner"))
+    lines = [f'<td width="50%" valign="top">', f"<h3>{label}</h3>"]
+    if banner:
+        lines.append(f'<a href="{url}"><img src="{banner}" alt="{name}" width="100%"></a>')
+    lines += [f'<h4><a href="{url}">{(emoji + " ") if emoji else ""}{name}</a></h4>', f"{blurb}<br><br>",
+              f"<sub>{meta}</sub>", "</td>"]
+    return "\n".join(lines)
+
+
+def render_spotlight(projects: list[dict], cfg: dict) -> str:
+    """Latest work (most recently pushed) + most popular (stars, then forks). "" if nothing to show."""
+    overrides = {k.lower(): v for k, v in cfg.get("projects", {}).items()}
+    pool = [p for p in projects if not p.get("archived") and p["name"].lower() != OWNER.lower()]
+    if not pool:
+        return ""
+    latest = max(pool, key=lambda p: p.get("updated_at") or "")
+    ranked = sorted(pool, key=lambda p: (int(p.get("stars") or 0), int(p.get("forks") or 0),
+                                         p.get("updated_at") or ""), reverse=True)
+    popular = next((p for p in ranked if p is not latest), None)
+
+    def plural(n: int, word: str) -> str:
+        return f"{n} {word}{'' if n == 1 else 's'}"
+
+    cells = [_spot_card(latest, overrides.get(latest["name"].lower()), "🆕 Latest work",
+                        f"🕒 Updated {nice_date((latest.get('updated_at') or '')[:10])} · ⭐ {int(latest.get('stars') or 0)}")]
+    if popular:
+        stars, forks = int(popular.get("stars") or 0), int(popular.get("forks") or 0)
+        cells.append(_spot_card(popular, overrides.get(popular["name"].lower()), "🔥 Most popular",
+                                f"⭐ {plural(stars, 'star')}" + (f" · 🍴 {plural(forks, 'fork')}" if forks else "")))
+    return ("## 🔦 Spotlight\n\n<sub>Refreshed every day from my portfolio site.</sub>\n\n<table>\n<tr>\n"
+            + "\n".join(cells) + "\n</tr>\n</table>\n\n---")
+
+
 def load_projects(source: str | None) -> list[dict]:
     if source:
         data = json.loads(Path(source).read_text(encoding="utf-8"))
@@ -378,6 +442,7 @@ def main() -> int:
         return 0
 
     new_text = replace_region(text, "PROJECTS", body)
+    new_text = replace_region(new_text, "SPOTLIGHT", render_spotlight(projects, cfg))
     new_text = replace_region(new_text, "STACK", render_stack_extras(projects))
     try:
         research = load_research(args.research_source)
