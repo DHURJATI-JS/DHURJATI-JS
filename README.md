@@ -93,10 +93,10 @@ beyond it.
 <tr>
 <td width="50%" valign="top">
 <h3>🆕 Latest work</h3>
-<a href="https://github.com/DHURJATI-JS/ai-server-v2"><img src="https://repository-images.githubusercontent.com/1458999471/16571a3e-80d2-4e23-b391-5aa33da8d74f" alt="AI Server v2" width="100%"></a>
-<h4><a href="https://github.com/DHURJATI-JS/ai-server-v2">🖥️ AI Server v2</a></h4>
-One OpenAI-compatible link for two GPU PCs with automatic failover. It asks for the other PC's IP at boot, starts everything at logon and is reachable through a Cloudflare tunnel. (<a href="https://github.com/DHURJATI-JS/Ai-server">v1</a>)<br><br>
-<sub>🕒 Updated 25 Nov 2026 · ⭐ 4</sub>
+<a href="https://github.com/DHURJATI-JS/deminic-agentic-ai"><img src="https://repository-images.githubusercontent.com/1471085492/492162fe-437e-425f-9924-71ec9a9eccc3" alt="Deminic" width="100%"></a>
+<h4><a href="https://github.com/DHURJATI-JS/deminic-agentic-ai">Deminic</a></h4>
+Deminic is a private, self-hosted agentic AI designed to automate tasks for life, business, and coding. It runs locally using Gemma or Qwen, leveraging external models like Claude when necessary.<br><br>
+<sub>🕒 Updated 25 Nov 2026 · ⭐ 2</sub>
 </td>
 <td width="50%" valign="top">
 <h3>🔥 Most popular</h3>
