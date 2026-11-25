@@ -374,7 +374,8 @@ def _spot_card(project: dict, override: dict | None, label: str, meta: str) -> s
         emoji = ""
         name = html.escape(short_title(project))
         blurb = html.escape(first_sentences(project.get("summary") or project.get("description") or "", 200))
-    banner = safe_link(project.get("banner"))
+    banner = str(project.get("banner") or "")
+    banner = safe_link(SITE + banner if banner.startswith("/") else banner)  # the site's generated cards are relative
     lines = [f'<td width="50%" valign="top">', f"<h3>{label}</h3>"]
     if banner:
         lines.append(f'<a href="{url}"><img src="{banner}" alt="{name}" width="100%"></a>')
