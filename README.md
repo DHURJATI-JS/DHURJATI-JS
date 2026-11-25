@@ -51,14 +51,14 @@ class Dhurjati:
 <tr>
 <td width="50%" valign="top">
 <h3>🆕 Latest work</h3>
-<a href="https://github.com/DHURJATI-JS/deminic-agentic-ai"><img src="https://raw.githubusercontent.com/DHURJATI-JS/deminic-agentic-ai/main/docs/media/hero.gif" alt="Deminic Agentic AI" width="100%"></a>
-<h4><a href="https://github.com/DHURJATI-JS/deminic-agentic-ai">Deminic Agentic AI</a></h4>
-Deminic: a private, self-hosted agentic AI for life, business &amp; code. Local Gemma/Qwen first, Claude/ChatGPT only when needed. FastAPI, pgvector, Redis, Docker. MIT, as-is.<br><br>
-<sub>🕒 Updated 25 Nov 2026 · ⭐ 1</sub>
+<a href="https://github.com/DHURJATI-JS/ai-server-v2"><img src="https://repository-images.githubusercontent.com/1458999471/16571a3e-80d2-4e23-b391-5aa33da8d74f" alt="AI Server v2" width="100%"></a>
+<h4><a href="https://github.com/DHURJATI-JS/ai-server-v2">🖥️ AI Server v2</a></h4>
+One OpenAI-compatible link for two GPU PCs with automatic failover. It asks for the other PC's IP at boot, starts everything at logon and is reachable through a Cloudflare tunnel. (<a href="https://github.com/DHURJATI-JS/Ai-server">v1</a>)<br><br>
+<sub>🕒 Updated 25 Nov 2026 · ⭐ 4</sub>
 </td>
 <td width="50%" valign="top">
 <h3>🔥 Most popular</h3>
-<a href="https://github.com/DHURJATI-JS/elvin-autonomous-coding-agent"><img src="https://raw.githubusercontent.com/DHURJATI-JS/elvin-autonomous-coding-agent/main/docs/screenshots/landing-dark.png" alt="Elvin" width="100%"></a>
+<a href="https://github.com/DHURJATI-JS/elvin-autonomous-coding-agent"><img src="https://repository-images.githubusercontent.com/1462199972/cd2d0b93-c4a7-4b91-9212-9c4206632f05" alt="Elvin" width="100%"></a>
 <h4><a href="https://github.com/DHURJATI-JS/elvin-autonomous-coding-agent">Elvin</a></h4>
 Elvin is a local-first autonomous coding agent designed to plan, write, test, and fix code.<br><br>
 <sub>⭐ 9 stars · 🍴 1 fork</sub>
@@ -77,9 +77,9 @@ Elvin is a local-first autonomous coding agent designed to plan, write, test, an
 <table>
 <tr>
 <td width="50%" valign="top">
-<h3><a href="https://github.com/DHURJATI-JS/deminic-agentic-ai">✨ Deminic Agentic AI</a></h3>
-Deminic: a private, self-hosted agentic AI for life, business &amp; code. Local Gemma/Qwen first, Claude/ChatGPT only when needed. FastAPI, pgvector, Redis, Docker. MIT, as-is.<br><br>
-<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"> <img src="https://img.shields.io/badge/pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="pgvector">
+<h3><a href="https://github.com/DHURJATI-JS/deminic-agentic-ai">✨ Deminic</a></h3>
+Deminic is a private, self-hosted agentic AI designed to automate tasks for life, business, and coding. It runs locally using Gemma or Qwen, leveraging external models like Claude when necessary.<br><br>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="pgvector"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
 </td>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/elvin-autonomous-coding-agent">✨ Elvin</a></h3>
