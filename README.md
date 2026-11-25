@@ -94,6 +94,18 @@ Podcast Q&amp;A Studio is an AI-powered tool designed to assist in podcast produ
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="pgvector"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
 </td>
 <td width="50%" valign="top">
+<h3><a href="https://github.com/DHURJATI-JS/employee-management-system">🏢 Deminic EMS</a></h3>
+An AI employee management system that runs on the company's own machine, so company data never leaves the building: hiring with AI CV reading, attendance, payroll, tasks, video meetings, chat and ID checks. Local Gemma 3 on vLLM, or Claude.<br><br>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"> <img src="https://img.shields.io/badge/vLLM-30A2FF?style=flat-square" alt="vLLM"> <img src="https://img.shields.io/badge/Gemma%203-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma 3">
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+<h3><a href="https://github.com/DHURJATI-JS/IronPulse-AI-assisted-gym-management">🏋️ IronPulse</a></h3>
+Gym management with an AI coach on top: memory and live voice, gym and branch management, payroll, a gym shop, live chat for members and health safety checks.<br><br>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL%20%2B%20pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL + pgvector"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"> <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
+</td>
+<td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/ai-cost-estimator-from-drawings">📐 StartupOS</a></h3>
 AI cost estimates from machine drawings, inside a self-hosted workspace for startups: bookings with WhatsApp reminders, inventory alerts and a client portal.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="pgvector"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"> <img src="https://img.shields.io/badge/Gemma-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma"> <img src="https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=claude&logoColor=white" alt="Claude">
