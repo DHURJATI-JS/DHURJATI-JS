@@ -1,13 +1,35 @@
 {
-  "_help": "How projects appear in README.md. scripts/build_readme.py reads your portfolio site's /api/projects and /api/research and rebuilds the research-grade cards (top of the README, only while the site's research section is ON and has cards), the Spotlight (latest work + most popular, refreshed every run), the AI projects section (your own site categories such as Games get their own group) and the tech-stack extras. Projects listed here keep this name, emoji, text and badges; any other public project gets a card made from the site's AI summary. 'skip' = never get a card (featured by hand, or merged into another card). 'order' sets the card order inside each group; the 'other' group (projects you move to Other in the site's /admin) is always shown last. To hide a project everywhere, mark it Hidden in your site's /admin.",
+  "_help": "How projects appear in README.md. scripts/build_readme.py reads your portfolio site's /api/projects and /api/research and rebuilds the research-grade cards (top of the README, only while the site's research section is ON and has cards), the Spotlight (latest work + most popular, refreshed every run), the AI projects section (your own site categories such as Games get their own group) and the tech-stack extras. Projects listed here keep this name, emoji, text and badges; any other public project gets a card made from the site's AI summary. 'skip' = never get a card (merged into another card, or not a project). 'order' sets the card order inside each group; the 'other' group (projects you move to Other in the site's /admin) is always shown last. To hide a project everywhere, mark it Hidden in your site's /admin.",
   "skip": [
-    "employee-management-system",
-    "IronPulse-AI-assisted-gym-management",
     "Ai-server",
     "DHURJATI-JS",
     "ecommerce"
   ],
   "projects": {
+    "employee-management-system": {
+      "emoji": "🏢",
+      "name": "Deminic EMS",
+      "blurb": "An AI employee management system that runs on the company's own machine, so company data never leaves the building: hiring with AI CV reading, attendance, payroll, tasks, video meetings, chat and ID checks. Local Gemma 3 on vLLM, or Claude.",
+      "tech": [
+        "fastapi",
+        "postgresql",
+        "redis",
+        "docker",
+        "vllm",
+        "gemma3"
+      ]
+    },
+    "IronPulse-AI-assisted-gym-management": {
+      "emoji": "🏋️",
+      "name": "IronPulse",
+      "blurb": "Gym management with an AI coach on top: memory and live voice, gym and branch management, payroll, a gym shop, live chat for members and health safety checks.",
+      "tech": [
+        "fastapi",
+        "postgresql+pgvector",
+        "redis",
+        "tailwind"
+      ]
+    },
     "ai-cost-estimator-from-drawings": {
       "emoji": "📐",
       "name": "StartupOS",
@@ -130,6 +152,8 @@
   },
   "order": {
     "industry": [
+      "employee-management-system",
+      "IronPulse-AI-assisted-gym-management",
       "ai-cost-estimator-from-drawings",
       "agentic-world-simulator",
       "school-and-tutorials-management-MVP",
