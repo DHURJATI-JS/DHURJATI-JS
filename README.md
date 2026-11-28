@@ -282,12 +282,12 @@ Webcam fingerspelling (ISL/ASL) and printed-letter OCR to text, with user-taught
 ## 📈 GitHub activity
 
 <p align="center">
-  <img src="https://ghstats.dev/api/card?username=DHURJATI-JS&border_radius=12" alt="GitHub stats" height="170">
-  <img src="https://ghstats.dev/api/langs?username=DHURJATI-JS&layout=donut" alt="Top languages" height="170">
+  <img src="https://raw.githubusercontent.com/DHURJATI-JS/DHURJATI-JS/output/stats/overview.svg" alt="GitHub stats" height="170">
+  <img src="https://raw.githubusercontent.com/DHURJATI-JS/DHURJATI-JS/output/stats/languages.svg" alt="Top languages" height="170">
 </p>
 
 <p align="center">
-  <img src="https://streak-stats.demolab.com?user=DHURJATI-JS&theme=tokyonight&hide_border=true&border_radius=12" alt="GitHub streak">
+  <img src="https://raw.githubusercontent.com/DHURJATI-JS/DHURJATI-JS/output/stats/streak.svg" alt="GitHub streak">
 </p>
 
 ### 🧊 My commits in 3D
