@@ -95,10 +95,10 @@ beyond it.
 <tr>
 <td width="50%" valign="top">
 <h3>🆕 Latest work</h3>
-<a href="https://github.com/DHURJATI-JS/deminic-agentic-ai"><img src="https://repository-images.githubusercontent.com/1471085492/492162fe-437e-425f-9924-71ec9a9eccc3" alt="Deminic" width="100%"></a>
-<h4><a href="https://github.com/DHURJATI-JS/deminic-agentic-ai">Deminic</a></h4>
-Deminic is a private, self-hosted agentic AI designed to automate tasks for life, business, and coding. It runs locally using Gemma or Qwen, leveraging external models like Claude when necessary.<br><br>
-<sub>🕒 Updated 25 Nov 2026 · ⭐ 2</sub>
+<a href="https://github.com/DHURJATI-JS/pentestapp-ai-penetration-testing"><img src="https://repository-images.githubusercontent.com/1475420448/6532388f-670d-47a0-af9f-3a10d296f049" alt="PentestApp" width="100%"></a>
+<h4><a href="https://github.com/DHURJATI-JS/pentestapp-ai-penetration-testing">PentestApp</a></h4>
+PentestApp is a self-hosted, AI-assisted web application penetration testing tool. It performs vulnerability scanning, including checks for security headers, rate limiting, CSRF, and malware.<br><br>
+<sub>🕒 Updated 28 Nov 2026 · ⭐ 1</sub>
 </td>
 <td width="50%" valign="top">
 <h3>🔥 Most popular</h3>
@@ -121,77 +121,82 @@ Elvin is a local-first autonomous coding agent designed to plan, write, test, an
 <table>
 <tr>
 <td width="50%" valign="top">
+<h3><a href="https://github.com/DHURJATI-JS/pentestapp-ai-penetration-testing">✨ PentestApp</a></h3>
+PentestApp is a self-hosted, AI-assisted web application penetration testing tool. It performs vulnerability scanning, including checks for security headers, rate limiting, CSRF, and malware.<br><br>
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
+</td>
+<td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/deminic-agentic-ai">✨ Deminic</a></h3>
 Deminic is a private, self-hosted agentic AI designed to automate tasks for life, business, and coding. It runs locally using Gemma or Qwen, leveraging external models like Claude when necessary.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="pgvector"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/elvin-autonomous-coding-agent">✨ Elvin</a></h3>
 Elvin is a local-first autonomous coding agent designed to plan, write, test, and fix code.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"> <img src="https://img.shields.io/badge/Gemma-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma"> <img src="https://img.shields.io/badge/Qwen-1a1b27?style=flat-square" alt="Qwen">
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/podcast-qa-studio">✨ Podcast Q&amp;A Studio</a></h3>
 Podcast Q&amp;A Studio is an AI-powered tool designed to assist in podcast production. It helps users write, check, and time podcast questions, or provides mock interviews with coaching.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="pgvector"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis">
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/employee-management-system">🏢 Deminic EMS</a></h3>
 An AI employee management system that runs on the company's own machine, so company data never leaves the building: hiring with AI CV reading, attendance, payroll, tasks, video meetings, chat and ID checks. Local Gemma 3 on vLLM, or Claude.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"> <img src="https://img.shields.io/badge/vLLM-30A2FF?style=flat-square" alt="vLLM"> <img src="https://img.shields.io/badge/Gemma%203-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma 3">
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/IronPulse-AI-assisted-gym-management">🏋️ IronPulse</a></h3>
 Gym management with an AI coach on top: memory and live voice, gym and branch management, payroll, a gym shop, live chat for members and health safety checks.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL%20%2B%20pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL + pgvector"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"> <img src="https://img.shields.io/badge/Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white" alt="Tailwind CSS">
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/ai-cost-estimator-from-drawings">📐 StartupOS</a></h3>
 AI cost estimates from machine drawings, inside a self-hosted workspace for startups: bookings with WhatsApp reminders, inventory alerts and a client portal.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="pgvector"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"> <img src="https://img.shields.io/badge/Gemma-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma"> <img src="https://img.shields.io/badge/Claude-D97757?style=flat-square&logo=claude&logoColor=white" alt="Claude">
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/agentic-world-simulator">🌍 Agentic World Simulator</a></h3>
 Test a startup's strategy in a simulated world: agent-based consumers, companies and traders on a 3D globe, calibrated to live data, with Monte Carlo forecasts and daily AI insights.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL%20%2B%20pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL + pgvector"> <img src="https://img.shields.io/badge/Server--Sent%20Events-1a1b27?style=flat-square" alt="Server-Sent Events"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/school-and-tutorials-management-MVP">🎓 ClassNest</a></h3>
 School and tuition-centre management: live classes with recording, RAG-generated notes and tests, and an AI tutor that answers from paused video frames.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/vLLM-30A2FF?style=flat-square" alt="vLLM"> <img src="https://img.shields.io/badge/Gemma%203-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma 3"> <img src="https://img.shields.io/badge/Tesseract-3c3c3c?style=flat-square" alt="Tesseract">
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/vulnerability-detector">🛡️ Vulnerability Detector</a></h3>
 Find vulnerable Python dependencies before they find you: real OSV.dev advisories, a local Gemma review with a Claude fallback, and every upgrade re-verified.<br><br>
 <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white" alt="Ollama"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/cardvault">📇 CardVault</a></h3>
 A local visiting-card scanner: OpenCV straightens the photo, Apple Vision reads it, Gemma pulls out the contact, and pgvector powers typo-tolerant search.<br><br>
 <img src="https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white" alt="OpenCV"> <img src="https://img.shields.io/badge/Apple%20Vision-000000?style=flat-square&logo=apple&logoColor=white" alt="Apple Vision"> <img src="https://img.shields.io/badge/Gemma-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma"> <img src="https://img.shields.io/badge/pgvector-336791?style=flat-square&logo=postgresql&logoColor=white" alt="pgvector">
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/miniytapp">🎬 YT Mini</a></h3>
 AI video intelligence: summaries from key frames plus Whisper captions, streamed live over Socket.IO, rate-limited and CSRF-protected, and stress-tested with Locust.<br><br>
 <img src="https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white" alt="Flask"> <img src="https://img.shields.io/badge/Whisper-412991?style=flat-square&logo=openai&logoColor=white" alt="Whisper"> <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white" alt="Ollama"> <img src="https://img.shields.io/badge/Locust-2E7D32?style=flat-square" alt="Locust">
 </td>
+</tr>
+<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/ai-server-v2">🖥️ AI Server v2</a></h3>
 One OpenAI-compatible link for two GPU PCs with automatic failover. It asks for the other PC's IP at boot, starts everything at logon and is reachable through a Cloudflare tunnel. (<a href="https://github.com/DHURJATI-JS/Ai-server">v1</a>)<br><br>
 <img src="https://img.shields.io/badge/llama.cpp-1a1b27?style=flat-square" alt="llama.cpp"> <img src="https://img.shields.io/badge/Gemma%203-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma 3"> <img src="https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white" alt="PowerShell"> <img src="https://img.shields.io/badge/Cloudflare-F38020?style=flat-square&logo=cloudflare&logoColor=white" alt="Cloudflare">
 </td>
-</tr>
-<tr>
 <td width="50%" valign="top">
 <h3><a href="https://github.com/DHURJATI-JS/my-website">✨ AI-curated portfolio</a></h3>
 My portfolio site: an AI reads every README, sorts each project into social impact or industry, writes the summary, and keeps it all up to date automatically.<br><br>
@@ -269,7 +274,7 @@ Webcam fingerspelling (ISL/ASL) and printed-letter OCR to text, with user-taught
 <!-- STACK:START -->
 **Also used in my projects**
 
-<img src="https://img.shields.io/badge/Qwen-1a1b27?style=for-the-badge" alt="Qwen">
+<img src="https://img.shields.io/badge/ClamAV-1a1b27?style=for-the-badge" alt="ClamAV"> <img src="https://img.shields.io/badge/Qwen-1a1b27?style=for-the-badge" alt="Qwen">
 <!-- STACK:END -->
 
 ---
