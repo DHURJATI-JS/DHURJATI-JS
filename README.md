@@ -43,41 +43,34 @@ class Dhurjati:
 <!-- RESEARCH:END -->
 
 <!-- FEATURED:START -->
-## 🌟 Featured: Deminic Agentic AI
+## 🌟 Featured: PentestApp
 
-<a href="https://github.com/DHURJATI-JS/deminic-agentic-ai"><img src="https://raw.githubusercontent.com/DHURJATI-JS/deminic-agentic-ai/main/docs/media/social-preview.png" alt="Deminic: your private agentic AI for life, business and code" width="100%"></a>
+<a href="https://github.com/DHURJATI-JS/pentestapp-ai-penetration-testing"><img src="https://repository-images.githubusercontent.com/1475420448/6532388f-670d-47a0-af9f-3a10d296f049" alt="PentestApp" width="100%"></a>
 
 <table>
 <tr>
 <td width="60%" valign="top">
 
-**Your private, agentic AI for life, business and code, running on your own hardware.** It plans your day,
-guards your memories, runs your business desk and writes code that's scanned before it ever touches disk.
-A local Gemma / Qwen gateway does the work; Claude, ChatGPT or GitHub Models are called only when a task is
-beyond it.
+<p><b>PentestApp is a self-hosted, AI-assisted web application penetration testing tool. It performs vulnerability scanning, including checks for security headers, rate limiting, CSRF, and malware. It also includes Locust-based load testing and an isolated AI chat feature for analyzing findings.</b></p>
+<ul>
+<li>AI-assisted vulnerability scanning with explanations.</li>
+<li>Isolated AI chat for project-specific findings.</li>
+<li>Locust load testing with Chart.js graphs.</li>
+<li>Scope guard to prevent testing unauthorized sites.</li>
+<li>Sentinel to protect the user&#x27;s machine from hostile targets.</li>
+</ul>
 
-- 🧠 **Agentic, not just chatty**: it creates tasks, reminders, calendar events, clients, statements and e-mails
-- 🗂️ **Personal, business and coding modes** in one assistant, with its memory in pgvector
-- 🧑‍💻 **Coding studio**: plans with Gemma, writes with Qwen Coder and checks every library with OSV.dev first
-- 🛡️ **Safe by default**: a Sentinel AI guard, ClamAV scanning, restore points and encryption at rest
-- 🥽 **Immersive VR home page** for Meta Quest 3
-
-<a href="https://github.com/DHURJATI-JS/deminic-agentic-ai"><img src="https://img.shields.io/badge/View%20the%20code-deminic--agentic--ai-7aa2f7?style=for-the-badge&logo=github" alt="View the code"></a>
-<a href="https://github.com/DHURJATI-JS/deminic-agentic-ai#-watch-the-demos"><img src="https://img.shields.io/badge/Watch%20the%20demos-5%20videos-bb9af7?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch the demos"></a>
+<a href="https://github.com/DHURJATI-JS/pentestapp-ai-penetration-testing"><img src="https://img.shields.io/badge/View%20the%20code-pentestapp--ai--penetration--testing-7aa2f7?style=for-the-badge&logo=github" alt="View the code"></a>
 
 </td>
 <td width="40%" valign="top" align="center">
 
-**Built with**
+<b>Built with</b><br><br>
 
-<img src="https://skillicons.dev/icons?i=py,fastapi,postgres,redis,docker&perline=3" alt="Python, FastAPI, PostgreSQL, Redis, Docker">
+<img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI"> <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white" alt="PostgreSQL"> <img src="https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white" alt="Redis"> <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker">
 
 <br><br>
-
-<img src="https://img.shields.io/badge/Gemma%20%2F%20Qwen-local%20AI-4285F4?style=flat-square&logo=google&logoColor=white" alt="Gemma / Qwen, local AI">
-<img src="https://img.shields.io/badge/tests-83%20passed-22c55e?style=flat-square" alt="83 tests passed">
-<img src="https://img.shields.io/badge/AI%20eval-27%2F27-22c55e?style=flat-square" alt="AI eval 27/27">
-<img src="https://img.shields.io/badge/cross--account%20leaks-0%20%2F%20835-22c55e?style=flat-square" alt="0 cross-account leaks in 835 checks">
+<sub>⭐ 1 · MIT</sub>
 
 </td>
 </tr>
@@ -95,10 +88,10 @@ beyond it.
 <tr>
 <td width="50%" valign="top">
 <h3>🆕 Latest work</h3>
-<a href="https://github.com/DHURJATI-JS/pentestapp-ai-penetration-testing"><img src="https://repository-images.githubusercontent.com/1475420448/6532388f-670d-47a0-af9f-3a10d296f049" alt="PentestApp" width="100%"></a>
-<h4><a href="https://github.com/DHURJATI-JS/pentestapp-ai-penetration-testing">PentestApp</a></h4>
-PentestApp is a self-hosted, AI-assisted web application penetration testing tool. It performs vulnerability scanning, including checks for security headers, rate limiting, CSRF, and malware.<br><br>
-<sub>🕒 Updated 28 Nov 2026 · ⭐ 1</sub>
+<a href="https://github.com/DHURJATI-JS/my-website"><img src="https://repository-images.githubusercontent.com/1458393520/809f89fe-790a-4a90-b5eb-dfd83519481d" alt="AI-curated portfolio" width="100%"></a>
+<h4><a href="https://github.com/DHURJATI-JS/my-website">✨ AI-curated portfolio</a></h4>
+My portfolio site: an AI reads every README, sorts each project into social impact or industry, writes the summary, and keeps it all up to date automatically.<br><br>
+<sub>🕒 Updated 28 Nov 2026 · ⭐ 5</sub>
 </td>
 <td width="50%" valign="top">
 <h3>🔥 Most popular</h3>
