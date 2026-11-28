@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="350" height="195" viewBox="0 0 350 195" role="img" aria-label="Top languages">
+<title>Top languages</title>
+<style>
+  .t { font: 600 18px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #70a5fd }
+  .l { font: 600 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #a9b1d6 }
+  .v { font: 700 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #c0caf5 }
+  .big { font: 700 28px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #c0caf5 }
+  .s { font: 400 12px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #565f89 }
+  .a { font: 700 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #38bdae }
+  .row { opacity: 0; animation: in .5s ease-out forwards }
+  @keyframes in { from { opacity: 0; transform: translateX(-6px) } to { opacity: 1; transform: none } }
+  @media (prefers-reduced-motion: reduce) { .row { animation: none; opacity: 1 } }
+</style>
+<rect x="0.5" y="0.5" rx="12" width="349" height="194" fill="#1a1b27"/>
+<text x="25" y="38" class="t">Top languages</text>
+<circle cx="82" cy="112" r="44" fill="none" stroke="#3572A5" stroke-width="18" stroke-dasharray="196.03 80.43" stroke-dashoffset="-0.00" transform="rotate(-90 82 112)"/>
+<circle cx="82" cy="112" r="44" fill="none" stroke="#e34c26" stroke-width="18" stroke-dasharray="44.34 232.12" stroke-dashoffset="-196.03" transform="rotate(-90 82 112)"/>
+<circle cx="82" cy="112" r="44" fill="none" stroke="#f1e05a" stroke-width="18" stroke-dasharray="24.03 252.43" stroke-dashoffset="-240.37" transform="rotate(-90 82 112)"/>
+<circle cx="82" cy="112" r="44" fill="none" stroke="#663399" stroke-width="18" stroke-dasharray="7.62 268.84" stroke-dashoffset="-264.40" transform="rotate(-90 82 112)"/>
+<circle cx="82" cy="112" r="44" fill="none" stroke="#012456" stroke-width="18" stroke-dasharray="2.29 274.17" stroke-dashoffset="-272.01" transform="rotate(-90 82 112)"/>
+<circle cx="82" cy="112" r="44" fill="none" stroke="#89e051" stroke-width="18" stroke-dasharray="1.85 274.61" stroke-dashoffset="-274.30" transform="rotate(-90 82 112)"/>
+<circle cx="82" cy="112" r="44" fill="none" stroke="#8b949e" stroke-width="18" stroke-dasharray="0.31 276.15" stroke-dashoffset="-276.15" transform="rotate(-90 82 112)"/>
+<g class="row" style="animation-delay:0ms"><circle cx="160" cy="62" r="5" fill="#3572A5"/><text x="172" y="66" class="s" style="fill:#a9b1d6">Python</text><text x="325" y="66" class="s" text-anchor="end">70.9%</text></g>
+<g class="row" style="animation-delay:90ms"><circle cx="160" cy="80" r="5" fill="#e34c26"/><text x="172" y="84" class="s" style="fill:#a9b1d6">HTML</text><text x="325" y="84" class="s" text-anchor="end">16.0%</text></g>
+<g class="row" style="animation-delay:180ms"><circle cx="160" cy="98" r="5" fill="#f1e05a"/><text x="172" y="102" class="s" style="fill:#a9b1d6">JavaScript</text><text x="325" y="102" class="s" text-anchor="end">8.7%</text></g>
+<g class="row" style="animation-delay:270ms"><circle cx="160" cy="116" r="5" fill="#663399"/><text x="172" y="120" class="s" style="fill:#a9b1d6">CSS</text><text x="325" y="120" class="s" text-anchor="end">2.8%</text></g>
+<g class="row" style="animation-delay:360ms"><circle cx="160" cy="134" r="5" fill="#012456"/><text x="172" y="138" class="s" style="fill:#a9b1d6">PowerShell</text><text x="325" y="138" class="s" text-anchor="end">0.8%</text></g>
+<g class="row" style="animation-delay:450ms"><circle cx="160" cy="152" r="5" fill="#89e051"/><text x="172" y="156" class="s" style="fill:#a9b1d6">Shell</text><text x="325" y="156" class="s" text-anchor="end">0.7%</text></g>
+<g class="row" style="animation-delay:540ms"><circle cx="160" cy="170" r="5" fill="#8b949e"/><text x="172" y="174" class="s" style="fill:#a9b1d6">Other</text><text x="325" y="174" class="s" text-anchor="end">0.1%</text></g>
+</svg>

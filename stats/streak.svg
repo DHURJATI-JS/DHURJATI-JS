@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" role="img" aria-label="Dhurjati Sharma: contribution streak">
+<title>Dhurjati Sharma: contribution streak</title>
+<style>
+  .t { font: 600 18px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #70a5fd }
+  .l { font: 600 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #a9b1d6 }
+  .v { font: 700 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #c0caf5 }
+  .big { font: 700 28px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #c0caf5 }
+  .s { font: 400 12px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #565f89 }
+  .a { font: 700 14px 'Segoe UI', Ubuntu, 'Helvetica Neue', Arial, sans-serif; fill: #38bdae }
+  .row { opacity: 0; animation: in .5s ease-out forwards }
+  @keyframes in { from { opacity: 0; transform: translateX(-6px) } to { opacity: 1; transform: none } }
+  @media (prefers-reduced-motion: reduce) { .row { animation: none; opacity: 1 } }
+</style>
+<rect x="0.5" y="0.5" rx="12" width="494" height="194" fill="#1a1b27"/>
+<g class="row" style="animation-delay:0ms"><text x="82" y="80" class="big" text-anchor="middle">171</text><text x="82" y="142" class="l" text-anchor="middle">Total contributions</text><text x="82" y="164" class="s" text-anchor="middle">24 Jan 2021 – now</text></g>
+<circle cx="247" cy="72" r="40" fill="none" stroke="#38bdae" stroke-width="5" opacity=".85"/>
+<g class="row" style="animation-delay:150ms"><text x="247" y="84" class="big" text-anchor="middle">1</text><text x="247" y="142" class="a" text-anchor="middle">Current streak</text><text x="247" y="164" class="s" text-anchor="middle">28 Nov 2026</text></g>
+<g class="row" style="animation-delay:300ms"><text x="412" y="80" class="big" text-anchor="middle">8</text><text x="412" y="142" class="l" text-anchor="middle">Longest streak</text><text x="412" y="164" class="s" text-anchor="middle">12 Nov – 19 Nov 2026</text></g>
+<path d="M165 30v135M330 30v135" stroke="#565f89" stroke-opacity=".5"/>
+</svg>
