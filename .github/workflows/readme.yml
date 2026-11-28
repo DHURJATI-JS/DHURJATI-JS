@@ -1,12 +1,15 @@
-# Keeps the research-grade cards, project cards and tech stack in README.md in sync with my portfolio
-# site (https://my-website-three-mu-29.vercel.app), which AI-analyses every public repo.
-# A new public project gets a card within ~12 hours. Edit readme/overrides.json to change how one looks.
-# Research-grade cards only appear while the site's research section is switched ON in /admin.
+# Keeps the featured project, research-grade cards, project cards and tech stack in README.md in sync
+# with my portfolio site (https://my-website-three-mu-29.vercel.app), which AI-analyses every public repo.
+# It checks the site every 15 minutes and only commits when something changed, so every sync on the site
+# (and every ★ README pick in its /admin) reaches the README within about 15 minutes. The site needs no
+# token for this: this workflow uses only the access GitHub gives every workflow in this repo.
+# Edit readme/overrides.json to change how a project looks, or readme/featured/<repo>.md for a
+# hand-written featured block. Research-grade cards only appear while the site's research section is ON.
 name: Update README projects
 
 on:
   schedule:
-    - cron: "41 */12 * * *"
+    - cron: "4,19,34,49 * * * *"
   workflow_dispatch:
   push:
     branches: [main]
@@ -18,18 +21,25 @@ on:
 permissions:
   contents: write
 
+# One run at a time, so two runs never race to push.
+concurrency:
+  group: readme-update
+  cancel-in-progress: false
+
 jobs:
   update:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Rebuild project cards and tech stack
+      - name: Rebuild the featured project, project cards and tech stack
         run: python scripts/build_readme.py
 
       - name: Commit if anything changed
@@ -42,4 +52,4 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add README.md
           git commit -m "README: refresh projects and tech stack"
-          git push
+          git push || { git pull --rebase origin main && git push; }

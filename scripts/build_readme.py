@@ -1,7 +1,14 @@
 """Rebuild the auto-updating parts of README.md from my portfolio site.
 
 Reads https://my-website-three-mu-29.vercel.app/api/projects (the site already AI-analyses
-every public repo) and /api/research, and rewrites three marked regions of README.md:
+every public repo) and /api/research, and rewrites these marked regions of README.md:
+
+  <!-- FEATURED:START --> ... <!-- FEATURED:END --> the one project shown big under the header, picked
+                                                      with one click (★ README) in the site's /admin.
+                                                      readme/featured/<repo>.md is used if you wrote one
+                                                      by hand (Deminic has one); otherwise the block is
+                                                      made from the site's card + readme/overrides.json.
+                                                      Left exactly as it is until something is picked.
 
   <!-- RESEARCH:START --> ... <!-- RESEARCH:END -->   research-grade projects: one big card each,
                                                       validators first. Empty (nothing shown at
@@ -20,7 +27,9 @@ every public repo) and /api/research, and rewrites three marked regions of READM
 Projects listed in readme/overrides.json keep their hand-written name, emoji, text and badges.
 New public projects get a card from the site's AI summary, at the top of their group.
 Hidden and private projects never appear (the site only publishes public, visible repos).
-Uses only the Python standard library.
+Uses only the Python standard library. Runs on GitHub Actions (.github/workflows/readme.yml) every
+15 minutes, so every sync on the site (and every ★ README pick) reaches the README within ~15 minutes;
+it only commits when the README actually changed. The site needs no token for any of this.
 
     python scripts/build_readme.py                  # update README.md in place
     python scripts/build_readme.py --source x.json  # use a saved /api/projects response
@@ -33,12 +42,15 @@ import html
 import json
 import re
 import sys
+import time
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 README = ROOT / "README.md"
 OVERRIDES = ROOT / "readme" / "overrides.json"
+FEATURED_DIR = ROOT / "readme" / "featured"  # hand-written featured blocks: <repo name>.md
 SITE = "https://my-website-three-mu-29.vercel.app"
 API = f"{SITE}/api/projects"
 RESEARCH_API = f"{SITE}/api/research"
@@ -349,14 +361,22 @@ def replace_region(text: str, name: str, body: str) -> str:
     return pattern.sub(lambda m: m.group(1) + inner + m.group(3), text, count=1)
 
 
+def fetch_json(url: str) -> object:
+    """GET a JSON document from the site. The ?fresh= stamp skips the CDN cache, so a sync on the
+    site shows up in the next run instead of up to 15 minutes later."""
+    stamp = urllib.parse.urlencode({"fresh": int(time.time())})
+    req = urllib.request.Request(f"{url}{'&' if '?' in url else '?'}{stamp}",
+                                 headers={"User-Agent": "profile-readme-builder", "Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        return json.load(resp)
+
+
 def load_research(source: str | None) -> list[dict]:
     """The site's research-grade projects ([] while its research section is OFF)."""
     if source:
         data = json.loads(Path(source).read_text(encoding="utf-8"))
     else:
-        req = urllib.request.Request(RESEARCH_API, headers={"User-Agent": "profile-readme-builder", "Accept": "application/json"})
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            data = json.load(resp)
+        data = fetch_json(RESEARCH_API)
     items = data.get("projects") if isinstance(data, dict) else None
     if not isinstance(items, list):
         raise ValueError("unexpected /api/research response")
@@ -408,17 +428,73 @@ def render_spotlight(projects: list[dict], cfg: dict) -> str:
             + "\n".join(cells) + "\n</tr>\n</table>\n\n---")
 
 
-def load_projects(source: str | None) -> list[dict]:
+# ------------------------------------------------------------------ featured --
+KEEP = object()  # "leave the featured block exactly as it is"
+
+
+def render_featured(projects: list[dict], choice: object, cfg: dict) -> object:
+    """The big block under the header, picked with ★ README in the site's /admin.
+
+    Returns KEEP (leave the block as it is: nothing picked on the site yet, an older site, or the
+    pick isn't published right now), "" (no featured block) or the block's markdown."""
+    if not isinstance(choice, str):
+        return KEEP  # null = never picked in /admin (or an older site without the field)
+    name = choice.strip()
+    if not name:
+        return ""
+    project = next((p for p in projects if p["name"].lower() == name.lower()), None)
+    if project is None:
+        return KEEP  # the site only publishes visible repos; don't drop the block on a hiccup
+    if FEATURED_DIR.is_dir():  # a hand-written block wins (matched by file name, never built from input)
+        for path in sorted(FEATURED_DIR.glob("*.md")):
+            if path.stem.lower() == name.lower():
+                return path.read_text(encoding="utf-8").strip()
+
+    override = {k.lower(): v for k, v in cfg.get("projects", {}).items()}.get(name.lower()) or {}
+    url = safe_link(project.get("html_url")) or f"https://github.com/{OWNER}/{html.escape(project['name'])}"
+    title = html.escape(override.get("name") or short_title(project))
+    blurb = override.get("blurb") or html.escape(  # an override's blurb is trusted (may hold simple HTML)
+        first_sentences(project.get("summary") or project.get("description") or "", 320))
+    points = [html.escape(str(x).strip()) for x in project.get("key_points") or [] if str(x).strip()][:5]
+    banner = str(project.get("banner") or "")
+    banner = safe_link(SITE + banner if banner.startswith("/") else banner)
+    if override.get("tech"):
+        badges = [badge(k) for k in override["tech"]]
+    else:
+        badges = [badge(k, fallback_label=orig) for k, orig in card_tech(project)]
+    repo_label = urllib.parse.quote(project["name"].replace("-", "--").replace("_", "__"), safe="")
+    buttons = [f'<a href="{url}"><img src="https://img.shields.io/badge/View%20the%20code-{repo_label}-7aa2f7'
+               f'?style=for-the-badge&logo=github" alt="View the code"></a>']
+    homepage = safe_link(project.get("homepage"))
+    if homepage:
+        buttons.append(f'<a href="{homepage}"><img src="https://img.shields.io/badge/Live%20demo-open-bb9af7'
+                       f'?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live demo"></a>')
+    facts = [f"⭐ {int(project.get('stars') or 0)}"]
+    if project.get("license"):
+        facts.append(html.escape(str(project["license"])))
+
+    lines = [f"## 🌟 Featured: {title}", ""]
+    if banner:
+        lines += [f'<a href="{url}"><img src="{banner}" alt="{title}" width="100%"></a>', ""]
+    lines += ["<table>", "<tr>", '<td width="60%" valign="top">', "", f"<p><b>{blurb}</b></p>"]
+    if points:
+        lines += ["<ul>", *(f"<li>{p}</li>" for p in points), "</ul>"]
+    lines += ["", "\n".join(buttons), "", "</td>", '<td width="40%" valign="top" align="center">', "",
+              "<b>Built with</b><br><br>", "", " ".join(badges) or "—", "", "<br><br>",
+              f"<sub>{' · '.join(facts)}</sub>", "", "</td>", "</tr>", "</table>", "", "---"]
+    return "\n".join(lines)
+
+
+def load_projects(source: str | None) -> tuple[list[dict], object]:
+    """(visible projects, the ★ README pick: a repo name, "" for none, None if never picked)."""
     if source:
         data = json.loads(Path(source).read_text(encoding="utf-8"))
     else:
-        req = urllib.request.Request(API, headers={"User-Agent": "profile-readme-builder", "Accept": "application/json"})
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            data = json.load(resp)
+        data = fetch_json(API)
     projects = data.get("projects") if isinstance(data, dict) else None
     if not isinstance(projects, list):
         raise ValueError("unexpected /api/projects response")
-    return [p for p in projects if isinstance(p, dict) and p.get("name")]
+    return [p for p in projects if isinstance(p, dict) and p.get("name")], data.get("readme_featured")
 
 
 def main() -> int:
@@ -428,7 +504,7 @@ def main() -> int:
     args = parser.parse_args()
 
     try:
-        projects = load_projects(args.source)
+        projects, featured = load_projects(args.source)
     except Exception as exc:  # noqa: BLE001 - site down: keep the README as it is
         print(f"Could not load projects ({exc}); README left unchanged.")
         return 0
@@ -443,6 +519,12 @@ def main() -> int:
         return 0
 
     new_text = replace_region(text, "PROJECTS", body)
+    block = render_featured(projects, featured, cfg)
+    if block is not KEEP:
+        if "<!-- FEATURED:START -->" in new_text:
+            new_text = replace_region(new_text, "FEATURED", block)
+        else:
+            print("README.md has no <!-- FEATURED:START --> / <!-- FEATURED:END --> markers; featured block skipped.")
     new_text = replace_region(new_text, "SPOTLIGHT", render_spotlight(projects, cfg))
     new_text = replace_region(new_text, "STACK", render_stack_extras(projects))
     try:

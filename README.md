@@ -42,6 +42,7 @@ class Dhurjati:
 <!-- RESEARCH:START -->
 <!-- RESEARCH:END -->
 
+<!-- FEATURED:START -->
 ## 🌟 Featured: Deminic Agentic AI
 
 <a href="https://github.com/DHURJATI-JS/deminic-agentic-ai"><img src="https://raw.githubusercontent.com/DHURJATI-JS/deminic-agentic-ai/main/docs/media/social-preview.png" alt="Deminic: your private agentic AI for life, business and code" width="100%"></a>
@@ -83,6 +84,7 @@ beyond it.
 </table>
 
 ---
+<!-- FEATURED:END -->
 
 <!-- SPOTLIGHT:START -->
 ## 🔦 Spotlight
